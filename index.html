@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Good Morning Bacchaw 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    color: #5b3658;
+    background:
+        radial-gradient(circle at top, #fff7c8, transparent 30%),
+        linear-gradient(180deg, #ffd6e7, #ffeef7 45%, #fff8dc);
+    transition: background 1s ease;
+}
+
+/* ---------------- BACKGROUND ---------------- */
+
+.sky {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.sun {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #fff1a8;
+    box-shadow:
+        0 0 30px #fff1a8,
+        0 0 80px #ffd86b,
+        0 0 140px #ffc95c;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sunrise 5s ease forwards;
+}
+
+@keyframes sunrise {
+    from {
+        transform: translate(-50%, 150px) scale(.6);
+        opacity: .2;
+    }
+
+    to {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+.cloud {
+    position: absolute;
+    width: 170px;
+    height: 55px;
+    background: rgba(255,255,255,.7);
+    border-radius: 50px;
+    filter: blur(1px);
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 75px;
+    height: 75px;
+    left: 25px;
+    top: -35px;
+}
+
+.cloud::after {
+    width: 95px;
+    height: 95px;
+    right: 20px;
+    top: -50px;
+}
+
+.cloud.one {
+    top: 17%;
+    left: -200px;
+    animation: cloudMove 30s linear infinite;
+}
+
+.cloud.two {
+    top: 30%;
+    right: -200px;
+    animation: cloudMoveReverse 38s linear infinite;
+}
+
+@keyframes cloudMove {
+    to {
+        transform: translateX(calc(100vw + 400px));
+    }
+}
+
+@keyframes cloudMoveReverse {
+    to {
+        transform: translateX(calc(-100vw - 400px));
+    }
+}
+
+/* ---------------- MAIN ---------------- */
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: min(950px, 92%);
+    margin: auto;
+    padding: 60px 0 100px;
+    text-align: center;
+}
+
+.intro {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .75;
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    font-size: clamp(3rem, 9vw, 7rem);
+    margin: 10px 0;
+    background: linear-gradient(90deg, #ff4f91, #a64cff, #ff4f91);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation:
+        gradient 4s linear infinite,
+        titleFloat 3s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+@keyframes titleFloat {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.subtitle {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.bacchaw {
+    color: #ff4f91;
+    font-weight: 800;
+}
+
+/* ---------------- BUTTON ---------------- */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.sound-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 250;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 12px 25px rgba(120, 50, 100, 0.2);
+    font-size: 1.4rem;
+    border: 1px solid rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+}
+
+.main-btn {
+    margin-top: 30px;
+    padding: 16px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4f91, #b34cff);
+    color: white;
+    font-size: 1.05rem;
+    box-shadow: 0 12px 30px rgba(200,60,140,.3);
+    transition: .3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 18px 40px rgba(200,60,140,.4);
+}
+
+/* ---------------- CARDS ---------------- */
+
+.section {
+    margin-top: 80px;
+}
+
+.card {
+    background: rgba(255,255,255,.58);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 30px;
+    padding: 35px;
+    margin: 30px 0;
+    box-shadow: 0 20px 60px rgba(150,70,120,.12);
+}
+
+.card h2 {
+    color: #ff4f91;
+    margin-bottom: 15px;
+}
+
+/* ---------------- ENVELOPE ---------------- */
+
+.envelope {
+    width: 280px;
+    height: 190px;
+    margin: 30px auto;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.envelope-body {
+    position: absolute;
+    inset: 0;
+    background: #ff8fba;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(200,60,120,.25);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 100px solid #ff5f9f;
+    transform-origin: top;
+    transition: transform .8s ease;
+    z-index: 3;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 140px;
+    background: #fffdf4;
+    left: 5%;
+    bottom: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .8s;
+    opacity: 0;
+}
+
+.envelope.open .letter {
+    transform: translateY(-110px);
+    opacity: 1;
+}
+
+/* ---------------- SURPRISE GRID ---------------- */
+
+.surprises {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 20px;
+}
+
+.surprise {
+    padding: 25px 15px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.7);
+    cursor: pointer;
+    transition: .4s;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.surprise:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(255,80,150,.15);
+}
+
+.surprise .emoji {
+    font-size: 3rem;
+}
+
+.hidden-message {
+    margin-top: 12px;
+    font-size: .95rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.surprise.revealed .hidden-message {
+    opacity: 1;
+    max-height: 100px;
+}
+
+/* ---------------- FLOWERS ---------------- */
+
+.flower-field {
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    background: linear-gradient(#c9efff, #e9ffd8);
+}
+
+.flower {
+    position: absolute;
+    bottom: 15px;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: .4s;
+    animation: flowerFloat 3s ease-in-out infinite;
+}
+
+.flower:hover {
+    transform: scale(1.4) rotate(15deg);
+}
+
+@keyframes flowerFloat {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ---------------- LOVE METER ---------------- */
+
+.meter {
+    width: 90%;
+    height: 28px;
+    margin: 20px auto;
+    background: #ffe0ec;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 10%;
+    background: linear-gradient(90deg, #ff4f91, #a64cff);
+    border-radius: inherit;
+    transition: 1s;
+}
+
+/* ---------------- BUNNY ---------------- */
+
+.bunny {
+    font-size: 5rem;
+    animation: bunny 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bunny {
+    50% {
+        transform: translateY(-15px) rotate(4deg);
+    }
+}
+
+/* ---------------- FLOATING HEARTS ---------------- */
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 20;
+    animation: heartFloat 4s linear forwards;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) scale(.5);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(var(--x)) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ---------------- CONFETTI ---------------- */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 16px;
+    z-index: 100;
+    animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* ---------------- FINAL ---------------- */
+
+.final-message {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    line-height: 1.8;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #ff4f91;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.footer {
+    margin-top: 80px;
+    opacity: .6;
+}
+
+/* ---------------- MODAL ---------------- */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(40,20,40,.65);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    width: min(500px, 90%);
+    padding: 40px;
+    background: #fffafc;
+    border-radius: 35px;
+    text-align: center;
+    transform: scale(.7);
+    transition: .4s;
+}
+
+.modal.active .modal-box {
+    transform: scale(1);
+}
+
+.close {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #ff5f9f;
+    color: white;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:600px) {
+
+    .container {
+        padding-top: 30px;
+    }
+
+    .card {
+        padding: 25px 18px;
+    }
+
+    .envelope {
+        transform: scale(.85);
+    }
+
+    .sun {
+        width: 120px;
+        height: 120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop playsinline>
+    <source src="WhatsApp%20Audio%202026-10-01%20at%2012.04.49%20AM.mpeg" type="audio/mpeg">
+</audio>
+
+<button class="sound-toggle" id="soundToggle" aria-label="Toggle background music">🔊</button>
+
+<div class="sky">
+    <div class="sun"></div>
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+</div>
+
+<main class="container">
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <div class="small">
+            ☀️ A tiny morning surprise for someone very special
+        </div>
+
+        <h1>
+            Good Morning<br>
+            Bacchaw 💗
+        </h1>
+
+        <p class="subtitle">
+            Warning ⚠️:
+            opening this page may cause
+            uncontrollable smiling,
+            random blushing,
+            and an unreasonable amount of happiness. 🥹💗
+        </p>
+
+        <button class="main-btn" onclick="startMorning()">
+            🌸 Enter Your Morning 🌸
+        </button>
+
+    </section>
+
+
+    <!-- BUNNY -->
+
+    <section class="section card">
+
+        <div class="bunny" onclick="bunnySurprise()">
+            🐰
+        </div>
+
+        <h2>Someone left you a little morning friend...</h2>
+
+        <p id="bunnyText">
+            Tap the bunny. 👀
+        </p>
+
+    </section>
+
+
+    <!-- LETTER -->
+
+    <section class="section card">
+
+        <h2>💌 You Have Mail</h2>
+
+        <p>
+            Someone apparently woke up with
+            a suspicious amount of love today.
+        </p>
+
+        <div class="envelope" onclick="openLetter(this)">
+
+            <div class="envelope-body"></div>
+
+            <div class="letter">
+                <b>Dear Bacchaw 💗</b>
+                <br><br>
+
+                Good morning, cutu. 🌸
+
+                <br><br>
+
+                I hope today treats you gently,
+                makes you smile randomly,
+                and gives you at least
+                one moment where you think...
+
+                <br><br>
+
+                <b>
+                    "Okay, today is actually a pretty good day." 🥹
+                </b>
+            </div>
+
+            <div class="envelope-flap"></div>
+
+        </div>
+
+        <p>
+            👆 Tap the envelope
+        </p>
+
+    </section>
+
+
+    <!-- SURPRISES -->
+
+    <section class="section">
+
+        <h2>🎁 BACCHAW'S SURPRISE BOXES</h2>
+
+        <p>
+            There are secrets hidden inside.
+            Obviously, curiosity is mandatory.
+        </p>
+
+        <br>
+
+        <div class="surprises">
+
+            <div class="surprise" onclick="reveal(this)">
+                <div class="emoji">🌸</div>
+                <b>Secret #1</b>
+
+                <div class="hidden-message">
+                    You're someone's favorite notification. 📱💗
+                </div>
+            </div>
+
+            <div class="surprise" onclick="reveal(this)">
+                <div class="emoji">🍫</div>
+                <b>Secret #2</b>
+
+                <div class="hidden-message">
+                    Emergency chocolate has been emotionally prescribed. 🍫
+                </div>
+            </div>
+
+            <div class="surprise" onclick="reveal(this)">
+                <div class="emoji">🫶</div>
+                <b>Secret #3</b>
+
+                <div class="hidden-message">
+                    Someone is ridiculously happy that you exist.
+                </div>
+            </div>
+
+            <div class="surprise" onclick="reveal(this)">
+                <div class="emoji">✨</div>
+                <b>Secret #4</b>
+
+                <div class="hidden-message">
+                    Today's mission: smile at least 17 times.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FLOWERS -->
+
+    <section class="section card">
+
+        <h2>🌷 Pick A Flower</h2>
+
+        <p>
+            Every flower has a different message.
+        </p>
+
+        <div class="flower-field">
+
+            <div class="flower"
+                 style="left:10%"
+                 onclick="flowerMessage('You deserve a very peaceful day 🌷')">
+                🌷
+            </div>
+
+            <div class="flower"
+                 style="left:30%;animation-delay:.5s"
+                 onclick="flowerMessage('May something unexpectedly wonderful happen today ✨')">
+                🌻
+            </div>
+
+            <div class="flower"
+                 style="left:50%;animation-delay:1s"
+                 onclick="flowerMessage('Please remember to smile, pretty human 🌸')">
+                🌸
+            </div>
+
+            <div class="flower"
+                 style="left:70%;animation-delay:1.5s"
+                 onclick="flowerMessage('Someone is sending you a giant invisible hug 🫂')">
+                🌹
+            </div>
+
+            <div class="flower"
+                 style="left:85%;animation-delay:2s"
+                 onclick="flowerMessage('You make ordinary days feel a little brighter ☀️')">
+                🌼
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOVE METER -->
+
+    <section class="section card">
+
+        <h2>💗 Bacchaw Happiness Meter</h2>
+
+        <p>
+            Keep clicking until the meter reaches 100%.
+        </p>
+
+        <div class="meter">
+            <div class="meter-fill" id="meterFill"></div>
+        </div>
+
+        <h3 id="meterText">
+            Happiness loading...
+        </h3>
+
+        <button class="main-btn" onclick="increaseHappiness()">
+            💕 Add Happiness
+        </button>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="section card">
+
+        <h2>🌅 One Last Thing...</h2>
+
+        <p class="final-message" id="finalMessage">
+
+            Your morning doesn't need to be perfect.
+
+            <br><br>
+
+            You don't have to accomplish
+            everything today.
+
+            <br><br>
+
+            Just wake up,
+            breathe,
+            drink some water,
+            take care of yourself,
+            and remember...
+
+            <br><br>
+
+            <b>
+                You are someone's very precious Bacchaw. 💗
+            </b>
+
+        </p>
+
+        <div class="signature">
+            Made with an unnecessarily large amount of love 💕
+        </div>
+
+        <button class="main-btn" onclick="finalSurprise()">
+            🎁 One Last Surprise
+        </button>
+
+    </section>
+
+
+    <div class="footer">
+        ☀️ Good morning, Bacchaw. Have a beautiful day. 💗
+    </div>
+
+</main>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <div style="font-size:4rem">
+            💗
+        </div>
+
+        <h2 id="modalTitle">
+            Surprise!
+        </h2>
+
+        <p id="modalText">
+            You found something!
+        </p>
+
+        <button class="close" onclick="closeModal()">
+            Okayyy 🥹
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ---------------- MORNING START ---------------- */
+
+function startMorning() {
+
+    createHearts(25);
+
+    confetti();
+
+    showModal(
+        "GOOD MORNING BACCHAW 🌅💗",
+        "Congratulations. You have officially entered your extremely cute morning. Now go make today beautiful. 🌸"
+    );
+}
+
+
+/* ---------------- BUNNY ---------------- */
+
+let bunnyClicks = 0;
+
+function bunnySurprise() {
+
+    bunnyClicks++;
+
+    const text = document.getElementById("bunnyText");
+
+    const messages = [
+        "The bunny says: wake up cutuuuu 🐰💗",
+        "The bunny has confirmed that you're adorable. Officially. 📜",
+        "The bunny would like you to drink water. 🥤",
+        "The bunny has one important question... where is its breakfast? 🥕",
+        "Okay. Bunny has fallen in love with your smile. 🐰💕"
+    ];
+
+    text.textContent =
+        messages[(bunnyClicks - 1) % messages.length];
+
+    createHearts(8);
+}
+
+
+/* ---------------- ENVELOPE ---------------- */
+
+function openLetter(element) {
+
+    element.classList.toggle("open");
+
+    if (element.classList.contains("open")) {
+        createHearts(15);
+    }
+}
+
+
+/* ---------------- SURPRISE BOX ---------------- */
+
+function reveal(element) {
+
+    element.classList.toggle("revealed");
+
+    if (element.classList.contains("revealed")) {
+        createHearts(5);
+    }
+}
+
+
+/* ---------------- FLOWERS ---------------- */
+
+function flowerMessage(message) {
+
+    showModal(
+        "🌸 A Flower For You",
+        message
+    );
+
+    createHearts(10);
+}
+
+
+/* ---------------- HAPPINESS ---------------- */
+
+let happiness = 10;
+
+function increaseHappiness() {
+
+    happiness += Math.floor(Math.random() * 15) + 5;
+
+    if (happiness > 100) {
+        happiness = 100;
+    }
+
+    document.getElementById("meterFill").style.width =
+        happiness + "%";
+
+    let message;
+
+    if (happiness < 40) {
+        message = "Still warming up... 🌱";
+    }
+    else if (happiness < 70) {
+        message = "Cute levels increasing... 🌸";
+    }
+    else if (happiness < 100) {
+        message = "BACCHAW HAPPINESS DETECTED 💗";
+    }
+    else {
+        message = "💥 MAXIMUM BACCHAW HAPPINESS 💥";
+        confetti();
+        createHearts(30);
+    }
+
+    document.getElementById("meterText").textContent =
+        message;
+}
+
+
+/* ---------------- HEARTS ---------------- */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💝",
+        "🌸",
+        "✨"
+    ];
+
+    heart.textContent =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.bottom = "-30px";
+
+    heart.style.fontSize =
+        Math.random() * 20 + 15 + "px";
+
+    heart.style.setProperty(
+        "--x",
+        (Math.random() * 200 - 100) + "px"
+    );
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+
+
+function createHearts(number) {
+
+    for (let i = 0; i < number; i++) {
+
+        setTimeout(() => {
+            createHeart();
+        }, i * 100);
+
+    }
+}
+
+
+/* ---------------- CONFETTI ---------------- */
+
+function confetti() {
+
+    const symbols = [
+        "💗",
+        "✨",
+        "🌸",
+        "💕",
+        "⭐",
+        "🎀"
+    ];
+
+    for (let i = 0; i < 70; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.animationDuration =
+            Math.random() * 2 + 2 + "s";
+
+        piece.style.fontSize =
+            Math.random() * 15 + 10 + "px";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 4000);
+    }
+}
+
+
+/* ---------------- MODAL ---------------- */
+
+function showModal(title, message) {
+
+    document.getElementById("modalTitle")
+        .textContent = title;
+
+    document.getElementById("modalText")
+        .textContent = message;
+
+    document.getElementById("modal")
+        .classList.add("active");
+}
+
+
+function closeModal() {
+
+    document.getElementById("modal")
+        .classList.remove("active");
+}
+
+
+/* ---------------- FINAL SURPRISE ---------------- */
+
+function finalSurprise() {
+
+    confetti();
+
+    createHearts(50);
+
+    document.getElementById("finalMessage").innerHTML = `
+
+        <b>
+        If you reached this far...
+        </b>
+
+        <br><br>
+
+        then here's the real surprise. 🥹💗
+
+        <br><br>
+
+        No matter how busy,
+        annoying,
+        sleepy,
+        chaotic,
+        or weird today becomes...
+
+        <br><br>
+
+        I hope you find at least
+        one tiny reason to smile.
+
+        <br><br>
+
+        And if you don't...
+
+        <br><br>
+
+        <b>
+        I'll volunteer to be one. 🫶💗
+        </b>
+
+        <br><br>
+
+        Now go have your beautiful day,
+        Bacchaw. 🌅🌸
+    `;
+
+    showModal(
+        "🎁 FINAL SURPRISE",
+        "Today officially belongs to Bacchaw. Go make it ridiculously beautiful. 💗"
+    );
+}
+
+
+/* ---------------- BACKGROUND MUSIC ---------------- */
+
+const bgMusic = document.getElementById("bgMusic");
+const soundToggle = document.getElementById("soundToggle");
+
+bgMusic.volume = 2.0;
+bgMusic.loop = true;
+
+function toggleMusic() {
+    bgMusic.muted = !bgMusic.muted;
+    soundToggle.textContent = bgMusic.muted ? "🔇" : "🔊";
+}
+
+soundToggle.addEventListener("click", toggleMusic);
+
+window.addEventListener("load", () => {
+    bgMusic.play().catch(() => {
+        bgMusic.muted = true;
+        soundToggle.textContent = "🔇";
+    });
+});
+
+
+/* ---------------- RANDOM AMBIENT HEARTS ---------------- */
+
+setInterval(() => {
+
+    if (Math.random() > .45) {
+        createHeart();
+    }
+
+}, 1200);
+
+
+/* ---------------- CLICK ANYWHERE ---------------- */
+
+document.addEventListener("click", function(e) {
+
+    if (
+        e.target.tagName !== "BUTTON" &&
+        !e.target.classList.contains("flower") &&
+        !e.target.classList.contains("bunny") &&
+        !e.target.closest(".envelope") &&
+        !e.target.closest(".surprise")
+    ) {
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.textContent = "✨";
+
+        sparkle.style.position = "fixed";
+        sparkle.style.left = e.clientX + "px";
+        sparkle.style.top = e.clientY + "px";
+        sparkle.style.pointerEvents = "none";
+        sparkle.style.fontSize = "20px";
+        sparkle.style.zIndex = "500";
+
+        sparkle.animate(
+            [
+                {
+                    transform: "scale(.2)",
+                    opacity: 1
+                },
+                {
+                    transform: "translateY(-50px) scale(1.5)",
+                    opacity: 0
+                }
+            ],
+            {
+                duration: 700
+            }
+        );
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => sparkle.remove(), 700);
+    }
+
+});
+
+</script>
+
+</body>
+</html>
